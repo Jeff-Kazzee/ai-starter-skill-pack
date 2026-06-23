@@ -28,10 +28,14 @@ jobs:
         id: site
         shell: bash
         run: |
-          if [ -f site/package.json ]; then
+          has_build_script() {
+            grep -q '"build"[[:space:]]*:' "$1/package.json"
+          }
+
+          if [ -f site/package.json ] && has_build_script site; then
             echo "app_dir=site" >> "$GITHUB_OUTPUT"
             echo "artifact_path=site/dist" >> "$GITHUB_OUTPUT"
-          elif [ -f package.json ]; then
+          elif [ -f package.json ] && has_build_script .; then
             echo "app_dir=." >> "$GITHUB_OUTPUT"
             echo "artifact_path=dist" >> "$GITHUB_OUTPUT"
           else
@@ -44,10 +48,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-          cache-dependency-path: |
-            package-lock.json
-            site/package-lock.json
 
       - name: Install dependencies
         if: steps.site.outputs.app_dir != ''

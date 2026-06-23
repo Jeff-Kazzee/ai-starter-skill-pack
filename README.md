@@ -50,6 +50,14 @@ Unless the user says otherwise, the skills:
 
 A compatible Agent Skills runtime generally expects one folder per skill with a `SKILL.md` file at its root. Copy the desired folder from `skills/` into the runtime's recognized skills directory or import it through the runtime's Skills interface. Preserve the files inside that skill folder.
 
+The pack is also installable as an npm-compatible data package directly from GitHub:
+
+```sh
+npm install github:Jeff-Kazzee/ai-starter-skill-pack
+```
+
+Package installs expose the skill folders under `node_modules/ai-starter-skill-pack/skills/` and the shared material under `node_modules/ai-starter-skill-pack/shared/`. The package allowlist only ships `skills/` and `shared/` plus normal package metadata.
+
 The open Agent Skills specification defines `SKILL.md` plus optional `references/`, `assets/`, and `scripts/`, but exact discovery paths and interfaces are runtime-specific and can change:
 
 - **Codex:** current documentation lists repository skills under `.agents/skills/` and user skills under `$HOME/.agents/skills/`.
