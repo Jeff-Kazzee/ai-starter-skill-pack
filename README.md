@@ -1,6 +1,6 @@
 # AI Starter Skill Pack
 
-![AI Starter Skill Pack preview](https://raw.githubusercontent.com/Jeff-Kazzee/ai-starter-skill-pack/dev/assets/ai-starter-skill-pack-social.png)
+![AI Starter Skill Pack — five beginner-friendly AI Agent Skills for onboarding, prompt debugging, learning, project ideas, and career proof](https://raw.githubusercontent.com/Jeff-Kazzee/ai-starter-skill-pack/dev/assets/ai-starter-skill-pack-social.png)
 
 Five small Agent Skills for getting unstuck, learning by doing, building useful proof, and making honest career progress with AI.
 
